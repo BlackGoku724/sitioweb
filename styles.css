@@ -1,0 +1,727 @@
+/*fuentes*/
+@font-face{
+    font-family: "TrebuchetMS";
+    src:url(TrebuchetMS.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "BebasNeue";
+    src:url(BebasNeue.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url(websymbols-regular-webfont.eot);
+    src: url(websymbols-regular-webfont.eot?#iefix) format('embedded-opentype'),
+        url(websymbols-regular-webfont.woff) format('woff'),
+        url(websymbols-regular-webfont.ttf) format('truetype'),
+        url(websymbols-regular-webfont.svg#WebSymbolsRegular) format('svg');
+    font-weight: normal;
+    font-style: normal;    
+}
+
+/*Estilos genrales */
+
+.gear, .icon{
+    font-family: 'WebSymbolsRegular';
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url(pattern.png );
+}
+
+.wrap{
+    width: 1200px;
+    margin: 0px auto;
+}
+
+/* Cabezera */
+
+#header{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    font-family: "BebasNeue";
+    color: white;
+}
+
+#logo{
+    float: left;
+    width: 200px;
+    background-color: #37bcf9;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+
+#logo:hover{
+    border-radius: 2px;
+    color: black;
+    background-color: #ccc;
+}
+
+#logo h3{
+    font-size: 40px;
+    float: right;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-right: 65px;
+    transition: all 300ms;
+}
+
+#logo .gear {
+    display: block; /* Muestra el icono del engranaje como un bloque */
+    float: left; /* Alinea el icono del engranaje a la izquierda dentro del contenedor #logo */
+    font-size: 30px; /* Tamaño de fuente del icono del engranaje */
+    margin-top: 8px; /* Margen superior del icono del engranaje para alinearlo verticalmente */
+    margin-left: 26px; /* Margen izquierdo del icono del engranaje */
+    animation-name: rotate-gear; /* Aplica la animación de rotación al icono del engranaje */
+    animation-duration: 2s; /* Duración de la animación de rotación */
+    animation-iteration-count: infinite; /* Repite la animación de rotación indefinidamente */
+    animation-timing-function: linear; /* Velocidad constante de la animación de rotación */
+}
+
+@keyframes rotate-gear {
+    from {
+        transform: rotateZ(0deg); /* Estado inicial de la animación: sin rotación */
+    }
+    to {
+        transform: rotateZ(360deg); /* Estado final de la animación: una rotación completa */
+    }
+}
+
+#logo:hover .gear {
+    animation: fromBellow 500ms linear; /* Cambia la animación del icono del engranaje al pasar el mouse sobre el logo */
+}
+
+@keyframes fromBellow {
+    0% {
+        transform: translateY(0%); /* Estado inicial de la animación: posición original */
+    }
+    50% {
+        transform: translateY(200%); /* Estado intermedio de la animación: desplaza el icono hacia abajo */
+    }
+    100% {
+        transform: translateY(0%); /* Estado final de la animación: vuelve a la posición original */
+    }
+}
+
+#logo:hover h3 {
+    animation: fromRight 300ms linear; /* Aplica una animación al texto del logo al pasar el mouse */
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(200%); /* Estado inicial de la animación: desplaza el texto desde la derecha */
+    }
+    to {
+        transform: translateX(0%); /* Estado final de la animación: texto en su posición original */
+    }
+}
+#menu{
+    float: right; /* Alinea el menú de navegación a la derecha. */
+    height: 70px; /* Altura fija del menú para alinear con la cabecera. */
+    background: transparent; /* Fondo transparente para el menú. */
+}
+
+#menu ul li{
+    font-size: 24px; /* Tamaño de la fuente para los elementos del menú. */
+    display: inline-block; /* Muestra los elementos del menú en línea pero con propiedades de bloque. */
+    margin: 0px 20px; /* Margen horizontal para separar los elementos del menú. */
+    letter-spacing: 1px; /* Espaciado entre letras para los elementos del menú. */
+    line-height: 70px; /* Altura de línea para centrar verticalmente el texto en el menú. */
+}
+
+#menu ul li a{
+    display: block; /* Hace que los enlaces ocupen el espacio completo del elemento li. */
+    color: white; /* Color del texto de los enlaces. */
+    text-decoration: none; /* Elimina el subrayado de los enlaces. */
+    transition: all 200ms; /* Efecto de transición para los cambios de propiedad de los enlaces. */
+}
+
+#menu ul li a:hover{
+    color: #37bcf9; /* Color del texto de los enlaces al pasar el mouse. */
+    transform: scale(1.2,1.2); /* Aumenta el tamaño del enlace al pasar el mouse. */
+}
+
+/*BANNER*/
+#banner{
+    width: 95.6%; /* Ancho relativo para el banner. */
+    height: 100px; /* Altura fija para el banner. */
+    border: 10px solid white; /* Borde sólido blanco alrededor del banner. */
+    box-shadow: 0px 0px 2px gray; /* Sombra suave alrededor del banner. */
+    background: url("bakbaner.png"); /* Imagen de fondo para el banner. */
+    background-position: -200px -200px; /* Posición de la imagen de fondo. */
+    margin: 20px auto; /* Centra el banner horizontalmente con un margen superior e inferior. */
+    animation: backBanner 10s linear;
+    overflow: hidden;
+
+
+}
+
+#banner h1{
+    display: block; /* Hace que el elemento h1 se comporte como un bloque, ocupando todo el ancho disponible. */
+    width: 850px; /* Establece un ancho fijo de 850px para el elemento h1. */
+    font-family: "BebasNeue"; /* Usa la fuente personalizada "BebasNeue" para el texto. */
+    color: white; /* Establece el color del texto a blanco. */
+    font-size: 45px; /* Define el tamaño de la fuente a 45px, haciendo el texto más grande. */
+    font-weight: normal; /* Establece el grosor de la fuente a normal, evitando que sea demasiado grueso o delgado. */
+    letter-spacing: 2px; /* Aumenta el espacio entre las letras en 2px para mejorar la legibilidad. */
+    text-shadow: 2px 2px 1px black; /* Aplica una sombra negra al texto para crear un efecto de profundidad o resaltado. */
+    margin: 27px auto; /* Centra el elemento h1 horizontalmente con un margen superior e inferior de 27px. */
+    margin-left: 465px; /* Desplaza el elemento h1 hacia la derecha desde el margen izquierdo en 465px. */
+    animation: showText 10s linear;
+    overflow: hidden;
+}
+
+/*TARJETAS*/
+.card{
+    float: left; /* Las tarjetas se alinean a la izquierda para que puedan colocarse en fila horizontalmente. */
+    width: 206px; /* Ancho fijo para cada tarjeta. */
+    height: 305px; /* Altura fija para cada tarjeta. */
+    border: 1px solid #ccc; /* Borde de 1px en color gris claro alrededor de cada tarjeta. */
+    box-shadow: 1px 1px 2px #ddd; /* Sombra ligera para dar efecto de elevación a la tarjeta. */
+    overflow: hidden; /* Oculta el contenido que exceda el tamaño de la tarjeta. */
+    margin: 47.1px; /* Margen alrededor de cada tarjeta para asegurar espacio entre ellas. */
+    margin-top: 40px; /* Margen superior adicional para separación de elementos anteriores. */
+    background: white; /* Fondo blanco para las tarjetas, contrastando con el fondo general. */
+    cursor: pointer; /* Cambia el cursor a forma de mano al pasar sobre la tarjeta, indicando interactividad. */
+    transition: all 300ms; /* Transición suave para cambios en la tarjeta (como en hover). */
+}
+
+.card:hover{
+    background: black; /* Cambia el fondo de la tarjeta a negro al pasar el mouse. */
+}
+
+.card:hover .icon{
+    font-size: 70px; /* Aumenta el tamaño del icono en hover. */
+    color: #37bcf9; /* Cambia el color del icono a azul claro. */
+    animation: showIcon 300ms linear; /* Aplica animación al icono para mostrarlo. */
+}
+
+@keyframes showIcon{
+    from{
+        transform: translateY(-200%); /* Comienza la animación desde abajo. */
+    }
+    to{
+        transform: translateY(0%); /* Termina la animación en la posición original del icono. */
+    }
+}
+
+.card:hover .category{
+    color: white; /* Cambia el color del texto de la categoría a blanco en hover. */
+    animation: showCategory 400ms linear; /* Aplica animación al texto de la categoría. */
+}
+
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%); /* Comienza la animación desde más abajo. */
+        color: black; /* Inicia con el color de texto en negro. */
+    }
+    to{
+        transform: translateY(0%); /* Termina la animación en la posición original del texto. */
+        color: white; /* Termina con el color de texto en blanco. */
+    }
+}
+
+.card:hover .description{
+    color: white; /* Cambia el color del texto de la descripción a blanco en hover. */
+    animation: showDescription 400ms linear; /* Aplica animación al texto de la descripción. */
+}
+
+@keyframes showDescription{
+    from{
+        transform: translateX(-300%); /* Comienza la animación desde el lado izquierdo. */
+        color: black; /* Inicia con el color de texto en negro. */
+    }
+    to{
+        transform: translateX(0%); /* Termina la animación en la posición original del texto. */
+    }
+}
+
+.card .icon{
+    display: block; /* Muestra el icono como un bloque, ocupando todo el ancho. */
+    width: 100%; /* Ancho completo dentro de la tarjeta. */
+    height: 130px; /* Altura fija para el icono. */
+    font-size: 50px; /* Tamaño inicial del icono. */
+    line-height: 110px; /* Altura de línea para centrar verticalmente el icono. */
+    text-align: center; /* Alineación del texto (icono) al centro. */
+    margin: 0px auto; /* Centrado horizontal del icono. */
+    transition: all 300ms; /* Transición suave para cambios en el icono. */
+}
+
+.card .category{
+    width: 100%; /* Ancho completo dentro de la tarjeta para la categoría. */
+    height: 50px; /* Altura fija para el texto de la categoría. */
+    font-family: "TrebuchetMS"; /* Fuente personalizada para el texto de la categoría. */
+    font-size: 21px; /* Tamaño del texto para la categoría. */
+    font-weight: bold; /* Texto en negrita para la categoría. */
+    text-align: center; /* Alineación del texto de la categoría al centro. */
+    color: #00538c; /* Color azul oscuro para el texto de la categoría. */
+    transition: all 300ms; /* Transición suave para cambios en el texto de la categoría. */
+}
+
+.card .description{
+    font-family: "TrebuchetMS"; /* Fuente personalizada para la descripción. */
+    text-align: center; /* Alineación del texto de la descripción al centro. */
+    color: #0370b9; /* Color azul claro para el texto de la descripción. */
+    font-size: 15px; /* Tamaño del texto para la descripción. */
+    transition: all 300ms; /* Transición suave para cambios en el texto de la descripción. */
+}
+
+/*BARRA LATERAL */
+
+#lateral{
+    width: 300px; /* Ancho fijo para la barra lateral. */
+    min-height: 1200px; /* Altura mínima para la barra lateral. */
+    font-family: "TrebuchetMS"; /* Fuente personalizada para el texto dentro de la barra lateral. */
+    float: right; /* Coloca la barra lateral a la derecha del contenido principal. */
+    margin: 20px;
+}
+
+aside h3{
+    display: block; /* Hace que el encabezado se comporte como un bloque, ocupando el ancho completo. */
+    width: auto; /* El ancho se ajusta al contenido dentro del encabezado. */
+    height: 45px; /* Altura fija para el encabezado. */
+    line-height: 49px; /* Altura de línea para centrar verticalmente el texto dentro del encabezado. */
+    background: url(pxgray.png); /* Fondo para el encabezado, probablemente una textura o color. */
+    box-shadow: 0px 1px 0px #393d3f, 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f; /* Sombra múltiple para efecto de profundidad o 3D. */
+    font-size: 30px; /* Tamaño grande para el texto del encabezado. */
+    font-family: "TrebuchetMS"; /* Fuente personalizada para el encabezado. */
+    font-weight: normal; /* Grosor normal del texto. */
+    letter-spacing: 2px; /* Espaciado entre letras para mejorar legibilidad. */
+    padding-left: 15px; /* Relleno izquierdo para separar el texto del borde del encabezado. */
+    margin-top: 30px; /* Margen superior para separar el encabezado de elementos arriba de él. */
+    margin-bottom: 15px; /* Margen inferior para separar el encabezado de elementos debajo de él. */
+}
+
+#lateral h3:first-child{
+    margin-top: 0px;
+}
+
+#search{
+    width: 90%; /* Ancho relativo para ajustarse dentro de la barra lateral. */
+    height: 30px; /* Altura fija para la caja de búsqueda. */
+    margin: 10px auto; /* Centra la caja de búsqueda dentro de la barra lateral. */
+    background-color: white; /* Fondo blanco para destacar sobre el fondo de la barra lateral. */
+    border: 1px solid #ccc; /* Borde sutil para delinear la caja de búsqueda. */
+    border-radius: 5px; /* Bordes redondeados para suavizar la apariencia. */
+    box-shadow: 1px 1px 4px #ccc inset; /* Sombra interna para dar profundidad a la caja de búsqueda. */
+}
+
+#lateral input[type="text"]{
+    width: 85%; /* El campo de texto ocupa el 85% del ancho disponible de su contenedor. */
+    height: 30px; /* Altura fija de 30px para el campo de texto. */
+    border: none; /* Elimina cualquier borde predeterminado del campo de texto. */
+    padding-left: 5px; /* Agrega un poco de espacio interno en el lado izquierdo para que el texto no esté justo en el borde. */
+    border-radius: 5px; /* Aplica bordes redondeados para suavizar la apariencia del campo de texto. */
+    background-color: transparent; /* Fondo transparente para integrarse con cualquier fondo detrás del campo de texto. */
+    color: #ccc; /* Color inicial del texto dentro del campo de texto, generalmente gris claro. */
+    transition: all 300ms; /* Suaviza la transición de cualquier cambio de propiedad, como el color del texto. */
+}
+
+#lateral input[type="text"]:focus{
+    color: #555; /* Cambia el color del texto a un gris más oscuro cuando el campo de texto está enfocado, mejorando la visibilidad. */
+}
+
+#lateral input[type="button"],
+#lateral input[type="submit"]{
+    height: 30px; /* Altura fija de 30px para los botones, igual que el campo de texto para una apariencia uniforme. */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el mouse sobre los botones, indicando que son clickeables. */
+    font-size: 16px; /* Tamaño de fuente para el texto dentro de los botones. */
+    background-color: transparent; /* Fondo transparente para que los botones se integren con el fondo detrás de ellos. */
+    border: none; /* Elimina cualquier borde predeterminado de los botones. */
+    border-left: 1px solid #ccc; /* Añade un borde izquierdo para separar visualmente el botón del campo de texto o de otros botones. */
+    color: #555; /* Color del texto dentro de los botones, gris oscuro para contrastar con el fondo. */
+    padding-left: 6px; /* Espacio interno en el lado izquierdo para que el texto no esté justo en el borde. */
+}
+
+.aside-box{
+    width: 85%; /* Establece el ancho de los contenedores a un 85% del ancho de su contenedor padre, permitiendo un poco de margen a los lados. */
+    height: 240px; /* Altura fija de 240px para cada contenedor. */
+    margin: 0px auto; /* Centra el contenedor horizontalmente dentro de su contenedor padre. */
+    margin-top: 20px; /* Espacio adicional en la parte superior para separarlo de elementos anteriores. */
+    padding-top: 2px; /* Un pequeño relleno en la parte superior para separar el contenido del borde superior del contenedor. */
+    background: white; /* Fondo blanco para los contenedores, lo que hace que resalten sobre el fondo general de la barra lateral. */
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.3), /* Sombra sutil alrededor del contenedor para darle profundidad. */
+                0px 3px 7px rgba(0,0,0,0.3), /* Sombra más pronunciada en la parte inferior para un efecto de elevación. */
+                0px 1px white inset, /* Sombra interna blanca en la parte superior para un efecto de iluminación sutil. */
+                0px -3px 2px rgba(0,0,0,0.3) inset; /* Sombra interna oscura en la parte inferior para un efecto de hundimiento. */
+}
+
+#login input[type="email"],
+#login input[type="password"]{
+    display: block; /* Muestra los campos en bloque, ocupando toda la anchura posible. */
+    margin: 0px auto; /* Centra los campos horizontalmente. */
+    margin-top: 20px; /* Espacio superior para separar los campos entre sí. */
+    width: 82%; /* Ancho relativo al contenedor padre. */
+    height: 30px; /* Altura fija para los campos. */
+    border: 1px solid #ccc; /* Borde sutil para los campos. */
+    box-shadow: 1px 1px 1px #ccc inset; /* Sombra interior sutil para dar sensación de profundidad. */
+    border-radius: 5px; /* Bordes redondeados. */
+    padding-left: 30px; /* Espacio interior izquierdo para el texto. */
+    color: gray; /* Color del texto dentro de los campos. */
+}
+
+#login input[type="email"]:focus,
+#login input[type="password"]:focus{
+    color: #555; /* Oscurece el texto al enfocar para mejorar la visibilidad. */
+    box-shadow: 1px 1px 1px gray inset; /* Ajusta la sombra interior al enfocar. */
+}
+
+#login #user,
+#login #password{
+    display: block; /* Muestra las etiquetas en bloque. */
+    text-align: center; /* Centra el texto (íconos) dentro de las etiquetas. */
+    position: absolute; /* Posicionamiento absoluto para colocar sobre los campos de texto. */
+    margin-left: 15px; /* Espacio desde el lado izquierdo del contenedor. */
+    margin-top: 6px; /* Espacio desde la parte superior del contenedor para 'user'. */
+    height: 30px; /* Altura fija para las etiquetas, igual a la de los campos de texto. */
+}
+
+#login #password{
+    margin-left: 18px; /* Ajuste del margen izquierdo específico para el ícono de contraseña. */
+    margin-top: 25px; /* Ajuste del margen superior para posicionar correctamente el ícono de contraseña. */
+    font-size: 20px; /* Tamaño del ícono de contraseña. */
+}
+
+#login input[type="submit"],
+#login input[type="button"],
+#login input[type="reset"],
+#login button{
+    text-align: center; /* Alinea el texto al centro dentro de los botones e inputs. */
+    width: 100px; /* Establece un ancho fijo de 100px. */
+    height: 35px; /* Establece una altura fija de 35px. */
+    margin-top: 20px; /* Añade un margen superior de 20px para separarlos de otros elementos. */
+    color: white; /* Define el color del texto dentro de los botones como blanco. */
+    background: linear-gradient(to bottom, #3eb8e5 0%, #2ca0ca 100%); /* Aplica un gradiente de color azul como fondo. */
+    border: 1px solid #156785; /* Añade un borde sólido de 1px con un tono de azul específico. */
+    border-radius: 0px; /* Establece el radio del borde a 0, resultando en bordes cuadrados. */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar el mouse sobre los botones, indicando que son clickeables. */
+    font-size: 15px; /* Establece el tamaño del texto a 15px. */
+    font-family: "TrebuchetMS"; /* Usa la fuente "TrebuchetMS" para el texto. */
+    font-weight: lighter; /* Aplica un peso de fuente más ligero. */
+    margin-left: 17px; /* Añade un margen izquierdo de 17px para alinear los botones dentro de su contenedor. */
+    transition: all 300ms; /* Añade una transición suave para todos los cambios de propiedades que duren 300 milisegundos. */
+    margin-bottom: 20px;
+}
+
+#login input[type="submit"]:hover,
+#login input[type="button"]:hover,
+#login input[type="reset"]:hover,
+#login button:hover{
+    box-shadow: 0px 0px 3px gray; /* Añade una sombra alrededor de los botones cuando el mouse pasa sobre ellos, para un efecto visual de elevación. */
+}
+
+#login a{
+    display: block; /* Hace que cada enlace se muestre como un bloque, lo que significa que ocupará toda la anchura disponible para él. */
+    font-size: 14px; /* Establece el tamaño del texto de los enlaces a 14 píxeles. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para un aspecto más limpio. */
+    margin-left: 18px; /* Añade un margen a la izquierda de 18 píxeles para posicionar los enlaces dentro de su contenedor. */
+    color: #555; /* Establece el color del texto de los enlaces a un gris oscuro (#555) para mejorar la legibilidad. */
+}
+
+#login a:hover{
+    text-decoration: underline; /* Añade un subrayado a los enlaces cuando el cursor pasa sobre ellos, indicando interactividad. */
+    color: #2f78bc; /* Cambia el color del texto de los enlaces a un azul (#2f78bc) al pasar el cursor, proporcionando una señal visual de que son clickeables. */
+}
+
+#social a{
+    display: block; /* Hace que cada enlace se muestre como un bloque, lo que significa que ocupará toda la anchura disponible para él. */
+    color: #333; /* Establece el color del texto de los enlaces a un gris oscuro, para hacerlo más visible y legible. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para un aspecto más limpio. */
+    font-size: 30px; /* Aumenta el tamaño del texto de los enlaces a 30 píxeles, haciéndolos más prominentes. */
+    margin-left: 20px; /* Añade un margen a la izquierda de 20 píxeles para posicionar los enlaces dentro de su contenedor. */
+    margin-top: 10px; /* Añade un margen superior de 10 píxeles para separar los enlaces entre sí y de otros elementos arriba. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles para separar los enlaces entre sí y de otros elementos debajo. */
+}
+
+#social{
+    height: 230px; /* Establece una altura fija de 230 píxeles para el contenedor `#social`, asegurando que tiene suficiente espacio para mostrar todos los enlaces de 
+    redes sociales de manera clara. */
+}
+
+#social .overlay{
+    display: block; /* Muestra el elemento como un bloque */
+    height: 20px; /* Altura fija del elemento */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del texto */
+    font-weight: bold; /* Texto en negrita */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-shadow: 0px 0px 1px #ccc; /* Sombra sutil del texto */
+    border: 3px solid white; /* Borde sólido blanco alrededor del elemento */
+    box-shadow: 0px 0px 4px #ccc; /* Sombra de caja para dar efecto de profundidad */
+    background: #F4F7FE; /* Color de fondo claro */
+    position: absolute; /* Posicionamiento absoluto para ubicarlo sobre el icono */
+    padding: 5px; /* Relleno alrededor del contenido interno */
+    margin-left: 70px; /* Margen izquierdo para posicionar correctamente */
+    margin-top: -52px; /* Margen superior negativo para ajustar la posición vertical */
+    transform: translateX(-80%); /* Desplazamiento inicial hacia la izquierda */
+    opacity: 0; /* Inicialmente oculto (transparente) */
+    transition: all 400ms; /* Transición suave para efectos de opacidad y transformación */
+}
+
+#social div:hover .overlay{
+    opacity: 1; /* Hace el elemento completamente visible al pasar el mouse */
+    transform: translateX(0%); /* Mueve el elemento a su posición original */
+}
+
+
+/*ARTICULOS*/
+#articles{
+    width: 860px; /* Establece un ancho fijo de 860 píxeles para la sección de artículos, asegurando que ocupa un espacio determinado en la página. */
+    float: left; /* Alinea la sección de artículos a la izquierda, permitiendo que otros elementos (como una barra lateral) se alineen a su derecha. */
+}
+
+#articles h2{
+    display: block; /* Hace que los títulos de los artículos se comporten como bloques, ocupando el ancho completo disponible. */
+    width: 100%; /* Asegura que los títulos de los artículos ocupen todo el ancho de su contenedor `#articles`. */
+    height: 75px; /* Establece una altura fija de 75 píxeles para los títulos, proporcionando suficiente espacio para el texto. */
+    line-height: 75px; /* Ajusta la altura de línea al mismo valor que la altura del elemento, centrando verticalmente el texto dentro. */
+    text-align: center; /* Centra el texto de los títulos horizontalmente dentro de sus bloques. */
+    font-family: "BebasNeue"; /* Aplica la fuente personalizada "BebasNeue" para los títulos, mejorando la estética del texto. */
+    font-size: 40px; /* Aumenta el tamaño del texto a 40 píxeles, haciendo los títulos más prominentes y legibles. */
+    font-weight: normal; /* Mantiene el peso de la fuente en normal, evitando textos demasiado gruesos o delgados. */
+    letter-spacing: 2px; /* Aumenta el espacio entre letras para mejorar la legibilidad y el aspecto visual del texto. */
+    background: url(pxgray.png), white; /* Establece un fondo compuesto por una imagen (textura) y un color de fondo blanco. */
+    box-shadow: 0px 1px 0px #393d3f, 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f; /* Aplica múltiples sombras para crear un efecto de 
+    profundidad o tridimensional. */
+    margin: 0px auto; /* Centra el título horizontalmente dentro de su contenedor. */
+    margin-top: 20px; /* Añade un margen superior para separar el título de elementos previos. */
+    margin-bottom: 15px; /* Añade un margen inferior para separar el título de elementos siguientes. */
+}
+
+.clearfix{
+    float: none; /* Elimina la propiedad de flotación, evitando que el elemento flote. */
+    clear: both; /* Limpia ambos lados del elemento, asegurando que no haya elementos flotantes a su izquierda o derecha que afecten su posicionamiento. */
+}
+
+#articles article{
+    width: 100%; /* Ocupa el 100% del ancho de su contenedor padre. */
+    height: auto; /* La altura se ajusta automáticamente al contenido. */
+    border: 1px solid #ccc; /* Borde sólido y sutil alrededor del artículo. */
+    margin: 40px auto; /* Margen superior e inferior para separar los artículos entre sí y centra el artículo horizontalmente. */
+    padding: 10px; /* Relleno interior para separar el contenido del borde del artículo. */
+    font-family: "TrebuchetMS"; /* Fuente personalizada para el texto del artículo. */
+    background: white; /* Fondo blanco para el artículo. */
+    color: black; /* Texto en color negro para contrastar con el fondo blanco. */
+    box-shadow: 1px 1px 2px #ddd; /* Sombra suave alrededor del artículo para un efecto de profundidad. */
+}
+
+#articles article h4{
+    display: block; /* Hace que el título h4 se comporte como un bloque, ocupando todo el ancho disponible. */
+    font-size: 23px; /* Tamaño de fuente para el título del artículo. */
+    margin: 3px; /* Margen alrededor del título para separarlo de otros elementos. */
+}
+
+#articles article h4 a{
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces. */
+    color: #00538c; /* Establece un color azul específico para el texto del enlace. */
+}
+
+#articles article h4 a:hover{
+    text-decoration: underline; /* Añade un subrayado al texto del enlace cuando se pasa el mouse sobre él. */
+}
+
+#articles .data{
+    float: right; /* Posiciona la fecha o datos adicionales a la derecha del artículo. */
+    background: #393d3f; /* Fondo oscuro para los datos adicionales. */
+    color: white; /* Texto en color blanco para contrastar con el fondo oscuro. */
+    height: 30px; /* Altura fija para el contenedor de datos adicionales. */
+    line-height: 30px; /* Alinea verticalmente el texto dentro del contenedor. */
+    margin: -10px; /* Posiciona el contenedor hacia afuera del borde superior derecho del artículo. */
+    padding: 4px; /* Relleno interior para separar el texto de los bordes del contenedor. */
+    font-size: 13px; /* Tamaño de fuente para los datos adicionales. */
+    border-radius: 0px 0px 0px 5px; /* Bordes redondeados específicamente en la esquina inferior izquierda. */
+}
+
+#articles .data span{
+    margin: 6px; /* Margen alrededor del contenido dentro de `.data` para separar los elementos entre sí. */
+}
+
+#articles article p{
+    margin-top: 10px; /* Espacio superior antes del primer párrafo del artículo. */
+    margin-bottom: 10px; /* Espacio inferior después del último párrafo del artículo. */
+    font-size: 15px; /* Tamaño de fuente para el texto del artículo. */
+}
+
+#blog{
+    height: 100px; /* Establece una altura fija de 100px para el contenedor. */
+    margin-top: 60px; /* Añade un margen superior de 60px para separarlo de elementos anteriores. */
+    line-height: 100px; /* Establece la altura de línea igual a la altura del contenedor, centrando verticalmente el texto dentro. */
+    text-align: center; /* Alinea el texto al centro del contenedor. */
+    font-family: "BebasNeue"; /* Usa la fuente personalizada "BebasNeue" para el texto dentro del contenedor. */
+    transition: all 1s;
+}
+
+#blog a{
+    display: block; /* Hace que el enlace se comporte como un bloque, permitiendo establecer dimensiones y centrar el texto. */
+    font-family: "BebasNeue"; /* Especifica la misma fuente personalizada "BebasNeue" para el texto del enlace. */
+    font-size: 40px; /* Define un tamaño de fuente grande (40px) para hacer el enlace prominente. */
+    letter-spacing: 3px; /* Aumenta el espaciado entre letras para mejorar la legibilidad y el estilo visual del enlace. */
+    color: #00538c; /* Establece un color azul específico para el texto del enlace. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para un aspecto más limpio. */
+    transition: all 1s;
+}
+
+#blog:hover{
+    background-color: #333;
+    border: 10px solid #37bcf9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    animation: blink 10s infinite linear;
+}
+
+#blog:hover a{
+    color: white;
+    text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black,1px 6px 1px black;
+}
+
+/*FOOTER */
+#footer{
+    width: 100%; /* El pie de página ocupa el ancho completo de la ventana del navegador. */
+    height: 470px; /* Altura fija del pie de página. */
+    background: black; /* Fondo negro para el pie de página. */
+    color: white; /* Texto en color blanco para contraste con el fondo negro. */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor del pie de página. */
+}
+
+#footer .wrap > div{
+    float: left; /* Cada división dentro de un contenedor `.wrap` se alinea a la izquierda. */
+    width: 320px; /* Ancho fijo para estas divisiones. */
+    height: 370px; /* Altura fija para estas divisiones. */
+    margin: 40px; /* Margen alrededor de cada división para separación. */
+    text-align: center; /* El texto dentro de estas divisiones se centra. */
+    color: white; /* Color de texto blanco para legibilidad contra el fondo oscuro. */
+    font-family: "TrebuchetMS"; /* Fuente personalizada para el texto dentro de estas divisiones. */
+}
+
+#footer a{
+    text-decoration: none; /* Elimina el subrayado de los enlaces para un estilo más limpio. */
+    color: #37bcf9; /* Color azul claro para los enlaces, proporcionando un contraste llamativo. */
+    transition: all 300ms; /* Transición suave para los efectos de hover en los enlaces. */
+}
+
+#footer h5{
+    display: block; /* Hace que el elemento `h5` se comporte como un bloque. */
+    background: url(pxgray.png), white; /* Fondo compuesto por una imagen y un color de reserva blanco. */
+    height: 50px; /* Altura fija para los encabezados `h5`. */
+    letter-spacing: 2px; /* Espaciado entre letras para mejorar la legibilidad. */
+    text-align: center; /* Centra el texto dentro de los encabezados `h5`. */
+    font-family: "BebasNeue"; /* Usa la fuente personalizada "BebasNeue" para el texto. */
+    font-size: 40px; /* Tamaño de fuente grande para destacar los encabezados `h5`. */
+    line-height: 55px; /* Altura de línea para centrar verticalmente el texto dentro del encabezado. */
+    color: black; /* Color de texto negro que contrasta con el fondo claro del encabezado. */
+    border-radius: 5px; /* Bordes redondeados para los encabezados `h5`. */
+    margin-bottom: 15px;
+}
+
+#footer ul{
+    text-align: left; /* Alinea el texto de la lista hacia la izquierda para una presentación estándar. */
+    margin: 20px; /* Aplica un margen alrededor de la lista para separarla de otros elementos. */
+    font-size: 25px; /* Establece un tamaño de fuente grande para hacer que los ítems de la lista sean más legibles. */
+}
+
+#footer ul li{
+    margin-top: 10px; /* Espacio adicional en la parte superior de cada elemento de lista para separación. */
+    padding: 5px; /* Relleno dentro de cada elemento de lista para mayor espacio alrededor del texto. */
+    border-bottom: 1px solid #ccc; /* Borde inferior para separar visualmente los elementos de la lista. */
+}
+
+#footer ul li a{
+    display: block; /* Hace que cada enlace dentro de los elementos de lista ocupe toda la línea, mejorando la área clickeable. */
+    height: 40px; /* Altura fija para los enlaces, asegurando consistencia y espacio suficiente para clickear. */
+    transition: all 300ms;
+}
+
+#footer ul li:hover a{
+    padding-left: 40px;
+    color: white;
+    width: 100%;
+}
+
+#footer iframe{
+    width: 100%; /* El marco incrustado ocupa el 100% del ancho disponible de su contenedor. */
+    height: 300px; /* Altura fija para el marco incrustado, suficiente para mostrar contenido incrustado como un mapa. */
+    margin-top: 10px; /* Espacio adicional en la parte superior del marco para separarlo de elementos anteriores. */
+    border-radius: 5px; /* Bordes redondeados para suavizar la apariencia del marco incrustado. */
+    border: 5px solid white; /* Borde sólido blanco alrededor del marco para destacarlo sobre el fondo negro del pie de página. */
+    box-shadow: 0px 0px 5px gray; /* Sombra alrededor del marco para darle un efecto de profundidad. */
+}
+
+#footer img{
+    margin-bottom: 15px; /* Espacio adicional debajo de las imágenes para separarlas de otros elementos debajo. */
+}
+
+#footer #browsers img{
+    width: 45px; /* Establece un ancho fijo para las imágenes dentro del contenedor `#browsers`, probablemente íconos de navegadores. */
+}
+
+
+/* Animaciones */
+
+/* Animar el Banner */
+
+@keyframes backBanner{
+    0%{
+        background-position: 0px 0px;
+    }
+    100%{
+        background-position: -200px -200px;
+    }
+}
+
+@keyframes showText{
+    0%{
+        transform: translateX(-600%) scale(2,3);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(600%) scale(2,3);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-600%) scale(2,3);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%) scale(1,1);
+        text-shadow: 2px 2px 1px black;
+        color: transparent;
+        opacity: 1;
+    }
+}
+
+@keyframes blink{
+    0%{
+        border: 10px solid #37bcf9;
+    }
+    25%{
+        border: 10px solid green;
+    }
+    50%{
+        border: 10px solid yellow;
+    }
+    75%{
+        border: 10px solid white;
+    }
+    100%{
+        border: 10px solid red;
+    }
+
+}
+
